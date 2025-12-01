@@ -76,7 +76,261 @@
             style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
 
-              <tr bgcolor="#ffffd0">
+              <div class="paper-toggle">
+                <button id="show-important" class="toggle-btn active">Foundational Works</button>
+                <button id="show-all" class="toggle-btn">Show All Papers</button>
+              </div>
+
+              <style>
+                /* 預設只顯示 important，secondary 一開始藏起來 */
+                .paper.secondary {
+                  display: none;
+                }
+
+                .paper-toggle {
+                  margin: 25px 0 20px 0;
+                }
+
+                .toggle-btn {
+                  padding: 10px 22px;
+                  font-size: 15px;
+                  border-radius: 6px;
+                  border: 1px solid #ccc;
+                  background: #f7f7f7;
+                  cursor: pointer;
+                  margin-right: 10px;
+                  transition: all 0.2s ease;
+                  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                }
+
+                .toggle-btn:hover {
+                  background: #e9f2ff;
+                  border-color: #7aaaff;
+                }
+
+                .toggle-btn.active {
+                  background: #dce9ff;
+                  border-color: #5d8eff;
+                  font-weight: 600;
+                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+                }
+              </style>
+
+              <script>
+                document.getElementById("show-important").onclick = function () {
+                  document.querySelectorAll(".paper.important").forEach(el => el.style.display = "table-row");
+                  document.querySelectorAll(".paper.secondary").forEach(el => el.style.display = "none");
+
+                  document.getElementById("show-important").classList.add("active");
+                  document.getElementById("show-all").classList.remove("active");
+                };
+
+                document.getElementById("show-all").onclick = function () {
+                  document.querySelectorAll(".paper").forEach(el => el.style.display = "table-row");
+
+                  document.getElementById("show-all").classList.add("active");
+                  document.getElementById("show-important").classList.remove("active");
+                };
+              </script>
+
+              <tr class="paper important" bgcolor="#e3edff">
+                <td style="padding:16px;width:20%;vertical-align:middle">
+                  <img src='images/stat.png' width="160">
+                </td>
+                <td style="padding:8px;width:80%;vertical-align:middle">
+                  <a href="https://egil158.github.io/rethinking_stat/">
+                    <span class="papertitle">Rethinking Statistics and Causality: Why Mechanisms Cannot Be Inferred from
+                      Data Distributions</span>
+                  </a>
+                  <br>
+                  <strong>Egil Diau</strong>
+                  <br>
+                  <em>Zenodo</em>, 2025
+                  <br>
+                  <a href="https://egil158.github.io/rethinking_stat/">project page</a>
+                  /
+                  <a href="https://zenodo.org/records/17633314">Zenodo</a>
+                  <p></p>
+                  <p>
+                    Persistent failures of statistical and causal inference to match real-world behavior across
+                    disciplines reveal a deeper limitation: mechanisms cannot be recovered from data distributions.
+                    These mismatches motivate a revisit of both paradigms, showing that statistical inference collapses
+                    into geometric alignment, while causal inference extends the same error by conflating probability
+                    with causality.
+                  </p>
+                </td>
+              </tr>
+
+
+
+              <tr class="paper secondary" bgcolor="#fde0e0">
+                <td style="padding:16px;width:20%;vertical-align:middle">
+                  <img src='images/power.png' width="160">
+                </td>
+                <td style="padding:8px;width:80%;vertical-align:middle">
+                  <a href="https://egil158.github.io/power/">
+                    <span class="papertitle">Power as Relative Position: A Foundational Theory of Systemic
+                      Asymmetry</span>
+                  </a>
+                  <br>
+                  <strong>Egil Diau</strong>
+                  <br>
+                  <em>Zenodo</em>, 2025
+                  <br>
+                  <a href="https://egil158.github.io/power/">project page</a>
+                  /
+                  <a href="https://zenodo.org/records/16905457">Zenodo</a>
+                  <p></p>
+                  <p>
+                    Existing accounts of power are fragmented, often tied to traits, norms, or institutions. We propose
+                    a unified system theory of power: relative position in a system. This definition unifies biology,
+                    psychology, and system dynamics, yielding five lemmas that explain why power accumulates, converges,
+                    and endures.
+                  </p>
+                </td>
+              </tr>
+
+
+              <tr class="paper secondary" bgcolor="#e0f8e0">
+                <td style="padding:16px;width:20%;vertical-align:middle">
+                  <img src='images/culture.png' width="160">
+                </td>
+                <td style="padding:8px;width:80%;vertical-align:middle">
+                  <a href="https://egil158.github.io/culture/">
+                    <span class="papertitle">Rethinking Human Culture: Cognitive Mechanisms and Cross-Species
+                      Continuities</span>
+                  </a>
+                  <br>
+                  <strong>Egil Diau</strong>
+                  <br>
+                  <em>Zenodo</em>, 2025
+                  <br>
+                  <a href="https://egil158.github.io/culture/">project page</a>
+                  /
+                  <a href="https://zenodo.org/records/16788810">Zenodo</a>
+                  <p></p>
+                  <p>
+                    Culture isn’t uniquely human. Chimpanzees and orcas show rich cultural behaviour, yet traditional
+                    theories frame culture as symbolic, human-only, and vague. We replace this with a unified, testable
+                    framework that explains stability, variation, and complexity across all cultural systems, grounded
+                    in two continuous cognitive spectra.
+                  </p>
+                </td>
+              </tr>
+
+              <tr class="paper important" bgcolor="#fde0e0">
+                <td style="padding:16px;width:20%;vertical-align:middle">
+                  <img src='images/ToM.png' width="160">
+                </td>
+                <td style="padding:8px;width:80%;vertical-align:middle">
+                  <a href="https://egil158.github.io/social_cog/">
+                    <span class="papertitle">Rethinking Social Cognition: Power, Status, and the Myth of
+                      Mindreading</span>
+                  </a>
+                  <br>
+                  <strong>Egil Diau</strong>
+                  <br>
+                  <em>Zenodo</em>, 2025
+                  <br>
+                  <a href="https://egil158.github.io/social_cog/">project page</a>
+                  /
+                  <a href="https://zenodo.org/records/17502246">Zenodo</a>
+                  <p></p>
+                  <p>
+                    Theory of Mind is conceptually vague and empirically unreliable. Both humans and other social
+                    animals show high error rates in mental state inference, suggesting it reflects memory-based social
+                    inference rather than true mindreading. We argue that, in contrast, tracking status and navigating
+                    power are robust, consistent, and cross-species—offering a stronger foundation for understanding
+                    social cognition.
+                  </p>
+                </td>
+              </tr>
+
+
+              <tr class="paper important" bgcolor="#e0f8e0">
+                <td style="padding:16px;width:20%;vertical-align:middle">
+                  <img src='images/human_chimp.png' width="160">
+                </td>
+                <td style="padding:8px;width:80%;vertical-align:middle">
+                  <a href="https://egil158.github.io/chimpanzee_cognition/">
+                    <span class="papertitle">Rethinking Human Cognition: A Comparative Framework Bridging Biological
+                      Roots and Social Complexity</span>
+                  </a>
+                  <br>
+                  <strong>Egil Diau</strong>
+                  <br>
+                  <em>Zenodo</em>, 2025
+                  <br>
+                  <a href="https://egil158.github.io/chimpanzee_cognition/">project page</a>
+                  /
+                  <a href="https://zenodo.org/records/16731913">Zenodo</a>
+                  <p></p>
+                  <p>
+                    Most theories treat morality, politics, and cooperation as uniquely human inventions. We argue,
+                    instead, that these capacities are structured extensions of cognitive functions shared with other
+                    primates. To support this view, we propose a comparative framework—organized into six core
+                    domains—that bridges biological roots and social complexity, offering a new foundation for cognitive
+                    science, social theory, and computational modeling.
+                  </p>
+                </td>
+              </tr>
+
+              <!-- <tr class="paper secondary" bgcolor="#ffffd0">
+                <td style="padding:16px;width:20%;vertical-align:middle">
+                  <img src='images/soc_sim.png' width="160">
+                </td>
+                <td style="padding:8px;width:80%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2505.08319">
+                    <span class="papertitle">Reciprocity as the Foundational Substrate of Society: How Reciprocal
+                      Dynamics Scale into Social Systems</span>
+                  </a>
+                  <br>
+                  <strong>Egil Diau</strong>
+                  <br>
+                  <em>arXiv</em>, 2025
+                  <br>
+                  <a>project page (comming soon!)</a>
+                  /
+                  <a href="https://arxiv.org/abs/2505.08319">arXiv</a>
+                  <p></p>
+                  <p>
+                    Prevailing accounts frame large-scale institutions as products of cultural or social construction.
+                    We argue instead that their true origin lies in reciprocity—a behavioral substrate shared with other
+                    social animals. Modern systems like credit and money are structured extensions of this logic. We
+                    formalize this in a three-stage, simulateable model showing how decentralized reciprocal behavior
+                    scales into societal institutions.
+                  </p>
+                </td>
+              </tr> -->
+
+              <tr class="paper secondary" bgcolor="#ffffd0">
+                <td style="padding:16px;width:20%;vertical-align:middle">
+                  <img src='images/fin_sim.png' width="160">
+                </td>
+                <td style="padding:8px;width:80%;vertical-align:middle">
+                  <a href="https://egil158.github.io/biofoundation-finance/">
+                    <span class="papertitle">Finance as Extended Biology: Reciprocity as the Cognitive Substrate of
+                      Financial Behavior</span>
+                  </a>
+                  <br>
+                  <strong>Egil Diau</strong>
+                  <br>
+                  <em>arXiv</em>, 2025
+                  <br>
+                  <a href="https://egil158.github.io/biofoundation-finance/">project page</a>
+                  /
+                  <a href="https://arxiv.org/abs/2506.00099">arXiv</a>
+                  <p></p>
+                  <p>
+                    Finance is often traced to institutional design or cultural invention. We argue instead that it
+                    originates in the same behavioral substrate as economic exchange: the fundamental logic of
+                    reciprocity. Trade—commonly seen as finance’s starting point—is the canonical form of reciprocity,
+                    from which credit, insurance, token exchange, and investment emerge as structured extensions.
+                  </p>
+                </td>
+              </tr>
+
+              <tr class="paper important" bgcolor="#ffffd0">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <img src='images/econ_2.png' width="160">
                 </td>
@@ -106,174 +360,7 @@
                 </td>
               </tr>
 
-              <tr bgcolor="#fde0e0">
-                <td style="padding:16px;width:20%;vertical-align:middle">
-                  <img src='images/power.png' width="160">
-                </td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="https://egil158.github.io/power/">
-                    <span class="papertitle">Power as Relative Position: A Foundational Theory of Systemic
-                      Asymmetry</span>
-                  </a>
-                  <br>
-                  <strong>Egil Diau</strong>
-                  <br>
-                  <em>Zenodo</em>, 2025
-                  <br>
-                  <a href="https://egil158.github.io/power/">project page</a>
-                  /
-                  <a href="https://zenodo.org/records/16905457">Zenodo</a>
-                  <p></p>
-                  <p>
-                    Existing accounts of power are fragmented, often tied to traits, norms, or institutions. We propose
-                    a unified system theory of power: relative position in a system. This definition unifies biology,
-                    psychology, and system dynamics, yielding five lemmas that explain why power accumulates, converges,
-                    and endures.
-                  </p>
-                </td>
-              </tr>
-
-
-              <tr bgcolor="#e0f8e0">
-                <td style="padding:16px;width:20%;vertical-align:middle">
-                  <img src='images/culture.png' width="160">
-                </td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="https://egil158.github.io/culture/">
-                    <span class="papertitle">Rethinking Human Culture: Cognitive Mechanisms and Cross-Species
-                      Continuities</span>
-                  </a>
-                  <br>
-                  <strong>Egil Diau</strong>
-                  <br>
-                  <em>Zenodo</em>, 2025
-                  <br>
-                  <a href="https://egil158.github.io/culture/">project page</a>
-                  /
-                  <a href="https://zenodo.org/records/16788810">Zenodo</a>
-                  <p></p>
-                  <p>
-                    Culture isn’t uniquely human. Chimpanzees and orcas show rich cultural behaviour, yet traditional
-                    theories frame culture as symbolic, human-only, and vague. We replace this with a unified, testable
-                    framework that explains stability, variation, and complexity across all cultural systems, grounded
-                    in two continuous cognitive spectra.
-                  </p>
-                </td>
-              </tr>
-
-              <tr bgcolor="#fde0e0">
-                <td style="padding:16px;width:20%;vertical-align:middle">
-                  <img src='images/ToM.png' width="160">
-                </td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="https://egil158.github.io/social_cog/">
-                    <span class="papertitle">Rethinking Social Cognition: Power, Status, and the Myth of
-                      Mindreading</span>
-                  </a>
-                  <br>
-                  <strong>Egil Diau</strong>
-                  <br>
-                  <em>Zenodo</em>, 2025
-                  <br>
-                  <a href="https://egil158.github.io/social_cog/">project page</a>
-                  /
-                  <a href="https://zenodo.org/records/17502246">Zenodo</a>
-                  <p></p>
-                  <p>
-                    Theory of Mind is conceptually vague and empirically unreliable. Both humans and other social
-                    animals show high error rates in mental state inference, suggesting it reflects memory-based social
-                    inference rather than true mindreading. We argue that, in contrast, tracking status and navigating
-                    power are robust, consistent, and cross-species—offering a stronger foundation for understanding
-                    social cognition.
-                  </p>
-                </td>
-              </tr>
-
-
-              <tr bgcolor="#e0f8e0">
-                <td style="padding:16px;width:20%;vertical-align:middle">
-                  <img src='images/human_chimp.png' width="160">
-                </td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="https://egil158.github.io/chimpanzee_cognition/">
-                    <span class="papertitle">Rethinking Human Cognition: A Comparative Framework Bridging Biological
-                      Roots and Social Complexity</span>
-                  </a>
-                  <br>
-                  <strong>Egil Diau</strong>
-                  <br>
-                  <em>Zenodo</em>, 2025
-                  <br>
-                  <a href="https://egil158.github.io/chimpanzee_cognition/">project page</a>
-                  /
-                  <a href="https://zenodo.org/records/16731913">Zenodo</a>
-                  <p></p>
-                  <p>
-                    Most theories treat morality, politics, and cooperation as uniquely human inventions. We argue,
-                    instead, that these capacities are structured extensions of cognitive functions shared with other
-                    primates. To support this view, we propose a comparative framework—organized into six core
-                    domains—that bridges biological roots and social complexity, offering a new foundation for cognitive
-                    science, social theory, and computational modeling.
-                  </p>
-                </td>
-              </tr>
-
-              <tr bgcolor="#ffffd0">
-                <td style="padding:16px;width:20%;vertical-align:middle">
-                  <img src='images/soc_sim.png' width="160">
-                </td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/2505.08319">
-                    <span class="papertitle">Reciprocity as the Foundational Substrate of Society: How Reciprocal
-                      Dynamics Scale into Social Systems</span>
-                  </a>
-                  <br>
-                  <strong>Egil Diau</strong>
-                  <br>
-                  <em>arXiv</em>, 2025
-                  <br>
-                  <a>project page (comming soon!)</a>
-                  /
-                  <a href="https://arxiv.org/abs/2505.08319">arXiv</a>
-                  <p></p>
-                  <p>
-                    Prevailing accounts frame large-scale institutions as products of cultural or social construction.
-                    We argue instead that their true origin lies in reciprocity—a behavioral substrate shared with other
-                    social animals. Modern systems like credit and money are structured extensions of this logic. We
-                    formalize this in a three-stage, simulateable model showing how decentralized reciprocal behavior
-                    scales into societal institutions.
-                  </p>
-                </td>
-              </tr>
-
-              <tr bgcolor="#ffffd0">
-                <td style="padding:16px;width:20%;vertical-align:middle">
-                  <img src='images/fin_sim.png' width="160">
-                </td>
-                <td style="padding:8px;width:80%;vertical-align:middle">
-                  <a href="https://egil158.github.io/biofoundation-finance/">
-                    <span class="papertitle">Finance as Extended Biology: Reciprocity as the Cognitive Substrate of
-                      Financial Behavior</span>
-                  </a>
-                  <br>
-                  <strong>Egil Diau</strong>
-                  <br>
-                  <em>arXiv</em>, 2025
-                  <br>
-                  <a href="https://egil158.github.io/biofoundation-finance/">project page</a>
-                  /
-                  <a href="https://arxiv.org/abs/2506.00099">arXiv</a>
-                  <p></p>
-                  <p>
-                    Finance is often traced to institutional design or cultural invention. We argue instead that it
-                    originates in the same behavioral substrate as economic exchange: the fundamental logic of
-                    reciprocity. Trade—commonly seen as finance’s starting point—is the canonical form of reciprocity,
-                    from which credit, insurance, token exchange, and investment emerge as structured extensions.
-                  </p>
-                </td>
-              </tr>
-
-              <tr bgcolor="#ffffd0">
+              <tr class="paper important" bgcolor="#ffffd0">
                 <td style="padding:16px;width:20%;vertical-align:middle">
                   <img src='images/econ.png' width="160">
                 </td>
@@ -301,35 +388,35 @@
                 </td>
               </tr>
 
-
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <img src='images/llm_survey.png' width="160">
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://arxiv.org/pdf/2406.00936">
-                  <span class="papertitle">A Survey of Useful LLM Evaluation
-                  </span>
-                </a>
-                <br>
-                <a>Ji-Lun Peng*</a>,
-                <a>Sijia Cheng*</a>,
-                <strong>Egil Diau*</strong>,
-                <a>Sijia Cheng*</a>,
-                <a>Yung-Yu Shih*</a>,
-                <a>Po-Heng Chen</a>,
-                <a>Yen-Ting Lin</a>,
-                <a href="https://www.csie.ntu.edu.tw/~yvchen/">Yun-Nung Chen</a>
-                <br>
-                <em>arXiv</em>, 2024
-                <br>
-                <a href="https://arxiv.org/pdf/2406.00936">arXiv</a>
-                <p></p>
-                <p>
-                  We survey evaluation methods for LLMs and propose a two-stage perspective: from core language
-                  abilities to agent-level capabilities.
-                </p>
-              </td>
-
+              <!-- <tr class="paper secondary">
+                <td style="padding:16px;width:20%;vertical-align:middle">
+                  <img src='images/llm_survey.png' width="160">
+                </td>
+                <td style="padding:8px;width:80%;vertical-align:middle">
+                  <a href="https://arxiv.org/pdf/2406.00936">
+                    <span class="papertitle">A Survey of Useful LLM Evaluation
+                    </span>
+                  </a>
+                  <br>
+                  <a>Ji-Lun Peng*</a>,
+                  <a>Sijia Cheng*</a>,
+                  <strong>Egil Diau*</strong>,
+                  <a>Sijia Cheng*</a>,
+                  <a>Yung-Yu Shih*</a>,
+                  <a>Po-Heng Chen</a>,
+                  <a>Yen-Ting Lin</a>,
+                  <a href="https://www.csie.ntu.edu.tw/~yvchen/">Yun-Nung Chen</a>
+                  <br>
+                  <em>arXiv</em>, 2024
+                  <br>
+                  <a href="https://arxiv.org/pdf/2406.00936">arXiv</a>
+                  <p></p>
+                  <p>
+                    We survey evaluation methods for LLMs and propose a two-stage perspective: from core language
+                    abilities to agent-level capabilities.
+                  </p>
+                </td>
+              </tr> -->
 
 
 
